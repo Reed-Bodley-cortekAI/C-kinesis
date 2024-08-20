@@ -1,3 +1,4 @@
+/*
 #include "Samples.h"
 #include <gst/gst.h>
 #include <gst/app/app.h>
@@ -184,12 +185,11 @@ PVOID receiveGstreamerAudioVideo(PVOID args)
 
     gst_element_set_state(pipeline, GST_STATE_PLAYING);
 
-    /* block until error or EOS */
+    
     bus = gst_element_get_bus(pipeline);
     CHK_ERR(bus != NULL, STATUS_INTERNAL_ERROR, "[KVS GStreamer %s] Bus is NULL", roleType);
     msg = gst_bus_timed_pop_filtered(bus, GST_CLOCK_TIME_NONE, GST_MESSAGE_ERROR | GST_MESSAGE_EOS);
 
-    /* Free resources */
     if (msg != NULL) {
         switch (GST_MESSAGE_TYPE(msg)) {
             case GST_MESSAGE_ERROR:
@@ -229,3 +229,4 @@ CleanUp:
 
     return (PVOID) (ULONG_PTR) retStatus;
 }
+*/
